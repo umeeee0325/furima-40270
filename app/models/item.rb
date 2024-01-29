@@ -9,5 +9,6 @@ class Item < ApplicationRecord
   belongs_to :user
   has_one_attached :image
 
-  
+  validates :item_name, :explanation, :price, presence: true
+  validates :category_id, :charge_id, :region_id, :shipping_day_id, :status_id, numericality: { other_than: 1 , message: "can't be blank"}
 end
