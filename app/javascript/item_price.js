@@ -10,3 +10,5 @@ window.addEventListener('turbo:load', () => {
   })
 });
 
+window.addEventListener("turbo:load", price);
+window.addEventListener("turbo:render", price);
