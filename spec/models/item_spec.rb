@@ -67,6 +67,16 @@ RSpec.describe Item, type: :model do
         @item.valid?
         expect(@item.errors.full_messages).to include 'Price は¥300から¥9,999,999の範囲で設定してください'
       end
+      it 'priceが整数でないと登録できない' do
+        @item.price = 'abcdef'
+        @item.valid?
+        expect(@item.errors.full_messages).to include 'Price は¥300から¥9,999,999の範囲で設定してください', 'Price は半角数値のみ入力してください'
+      end
+      it 'userが紐づいていないと登録できない' do
+        @item.user = nil
+        @item.valid?
+        expect(@item.errors.full_messages).to include('User must exist')
+      end
     end
   end
 end
