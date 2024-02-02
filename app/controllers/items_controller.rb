@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :authenticate_user!, only: [:new]
+  before_action :authenticate_user!, only: [:new, :destroy]
   before_action :set_item, only: [:show, :update, :edit, :destroy]
 
   def index
@@ -41,8 +41,12 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    @item.destroy
-    redirect_to root_path
+    if @item.user == current_user
+      @item.destroy
+      redirect_to root_path
+    else
+      redirect_to item_path(@item), alert: 'You are not the owner of this item'
+    end
   end
 
   private
