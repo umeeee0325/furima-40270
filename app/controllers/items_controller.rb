@@ -26,6 +26,8 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
   end
 
+  
+
   private
 
   def message_params
