@@ -26,7 +26,14 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
   end
 
-  
+  def update
+    @item = Item.find(params[:id])
+    if @item.update(message_params)
+      redirect_to root_path
+    else
+      render :edit
+    end
+  end
 
   private
 
