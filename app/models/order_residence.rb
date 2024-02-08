@@ -1,6 +1,6 @@
 class OrderResidence
   include ActiveModel::Model
-  attr_accessor :postal_code, :region_id, :city, :house_number, :building_name, :telephone, :user_id, :item_id, :order_id, :token
+  attr_accessor :postal_code, :region_id, :city, :house_number, :building_name, :telephone, :user_id, :item_id, :token
 
   with_options presence: true do
     validates :token
