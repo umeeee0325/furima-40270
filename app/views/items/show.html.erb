@@ -40,15 +40,15 @@
       <tbody>
         <tr>
           <th class="detail-item">出品者</th>
-          <td class="detail-value"><%= User.find(@item.charge_id).nickname %></td>
+          <td class="detail-value"><%= User.find(@item.user_id).nickname %></td>
         </tr>
         <tr>
           <th class="detail-item">カテゴリー</th>
-          <td class="detail-value"><%= Category.find(@item.charge_id).name %></td>
+          <td class="detail-value"><%= Category.find(@item.category_id).name %></td>
         </tr>
         <tr>
           <th class="detail-item">商品の状態</th>
-          <td class="detail-value"><%= Status.find(@item.charge_id).name %></td>
+          <td class="detail-value"><%= Status.find(@item.status_id).name %></td>
         </tr>
         <tr>
           <th class="detail-item">配送料の負担</th>
@@ -56,11 +56,11 @@
         </tr>
         <tr>
           <th class="detail-item">発送元の地域</th>
-          <td class="detail-value"><%= Region.find(@item.charge_id).name %></td>
+          <td class="detail-value"><%= Region.find(@item.region_id).name %></td>
         </tr>
         <tr>
           <th class="detail-item">発送日の目安</th>
-          <td class="detail-value"><%= ShippingDay.find(@item.charge_id).name %></td>
+          <td class="detail-value"><%= ShippingDay.find(@item.shipping_day_id).name %></td>
         </tr>
       </tbody>
     </table>
