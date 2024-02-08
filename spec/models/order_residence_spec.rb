@@ -12,7 +12,7 @@ RSpec.describe OrderResidence, type: :model do
       it 'すべての値が正しく入力されていれば保存できること' do
         expect(@order_residence).to be_valid
       end
-      it 'は空でも保存できること' do
+      it '建物名は空でも保存できること' do
         @order_residence.building_name = ''
         expect(@order_residence).to be_valid
       end
